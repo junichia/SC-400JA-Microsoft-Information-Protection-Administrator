@@ -112,19 +112,27 @@ PowerShell を使用して同じ保持ポリシーを作成します
 
 5. 次のコマンドレットを実行して、Teams を除くすべての場所に対する最初の保持ポリシーを作成します。
 
-    `New-RetentionCompliancePolicy -Name "Company Wide PS" -ExchangeLocation All -ModernGroupLocation All -PublicFolderLocation All -SharePointLocation All -OneDriveLocation All`
+    ```
+    New-RetentionCompliancePolicy -Name "Company Wide PS" -ExchangeLocation All -ModernGroupLocation All -PublicFolderLocation All -SharePointLocation All -OneDriveLocation All
+    ```
 
 6. 次のコマンドレットを実行して、保持期間を設定します。単位は、変更日を基準にした日数を使用します。
-	
-    `New-RetentionComplianceRule -Name "Company Wide PS Rule" -Policy "Company Wide PS" -RetentionDuration 1095 -ExpirationDateOption ModificationAgeInDays -RetentionComplianceAction Keep`
+
+    ```
+    New-RetentionComplianceRule -Name "Company Wide PS Rule" -Policy "Company Wide PS" -RetentionDuration 1095 -ExpirationDateOption ModificationAgeInDays -RetentionComplianceAction Keep
+    ```
 
 7. 次のコマンドレットを実行して、Teams の場所に対する 2 つ目の保持ポリシーを作成します。
 
-    `New-RetentionCompliancePolicy -Name "Teams Retention PS" -TeamsChannelLocation All -TeamsChatLocation "Adele Vance", "Pradeep Gupta"`
+    ```
+    New-RetentionCompliancePolicy -Name "Teams Retention PS" -TeamsChannelLocation All -TeamsChatLocation "Adele Vance", "Pradeep Gupta"
+    ```
 
 8. 次のコマンドレットを実行して、日数を単位として保持期間を設定します。
 
-    `New-RetentionComplianceRule -Name "Teams Retention PS Rule" -Policy "Teams Retention PS" -RetentionDuration 1095 -RetentionComplianceAction Keep`
+    ```
+    New-RetentionComplianceRule -Name "Teams Retention PS Rule" -Policy "Teams Retention PS" -RetentionDuration 1095 -RetentionComplianceAction Keep
+    ```
 
 PowerShell を使って保持期間を 3 年に設定した保持ポリシーを正常に作成しました。
 
